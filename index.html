@@ -49,19 +49,22 @@
         }
 
         .logo-mark {
-            width: 220px;
-            height: 96px;
+            width: 210px;
+            height: auto;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
             transform: translateY(2px);
+            overflow: hidden;
         }
 
-        .logo-mark svg {
+        .logo-mark img {
             width: 100%;
-            height: 100%;
+            height: auto;
             display: block;
+            object-fit: contain;
+            filter: drop-shadow(0 10px 18px rgba(17, 24, 39, 0.4));
         }
 
         .nav-links {
@@ -495,7 +498,7 @@
             .hero h1 span { font-size: 2rem; }
             .hero { padding: 5rem 1.5rem; }
             nav { flex-direction: row; gap: 1rem; padding: 0.5rem 1rem; }
-            .logo-mark { width: 170px; height: 72px; }
+            .logo-mark { width: 170px; }
             .nav-links { gap: 1rem; }
             .nav-links a { font-size: 0.8rem; }
             .section { padding: 4rem 1.5rem; }
@@ -508,31 +511,9 @@
 </head>
 <body>
     <nav>
-        <div class="logo-mark" aria-label="B&B Pro Detailing logo">
-            <svg viewBox="0 0 430 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logoTitle logoDesc">
-                <title id="logoTitle">B and B Pro Detailing</title>
-                <desc id="logoDesc">A shield logo with B and B text and a car silhouette on a blue and black badge.</desc>
-
-                <g transform="translate(35,8)">
-                    <path d="M120 10L238 32L306 54L306 115C306 154 266 189 210 206C166 220 108 220 72 205C28 188 3 156 3 115V54L120 10Z" fill="#111827" stroke="#111827" stroke-width="8" stroke-linejoin="round"/>
-                    <path d="M124 22L235 42L283 62L283 112C283 146 249 174 210 188C169 202 119 202 85 188C52 175 20 148 20 112V62L124 22Z" fill="#0f2b4d" stroke="#1d5bac" stroke-width="5" stroke-linejoin="round"/>
-
-                    <text x="157" y="118" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="86" font-weight="800" letter-spacing="-4" fill="#F3F6FB">B&amp;B</text>
-
-                    <path d="M111 138C145 127 180 121 214 121C257 121 289 130 317 148L342 133C323 107 300 89 273 78C244 66 191 59 147 63C114 66 74 77 45 100L72 115C82 117 98 120 111 138Z" fill="#d4af37" opacity="0.9"/>
-
-                    <g transform="translate(70,142)">
-                        <path d="M8 56L29 39L70 32L104 32L142 41L174 51L204 61L214 81L201 89H18C9 89 0 81 0 72C0 66 2 61 8 56Z" fill="#111827" stroke="#111827" stroke-width="6" stroke-linejoin="round"/>
-                        <path d="M44 36L74 15L123 14L152 32L174 48L144 48L124 40L78 40L58 49L44 36Z" fill="#111827" stroke="#111827" stroke-width="5" stroke-linejoin="round"/>
-                        <path d="M44 37L73 16L121 16L155 33L162 44H131L111 38L76 38L61 47H34L44 37Z" fill="#1a73e8" opacity="0.2"/>
-                        <circle cx="63" cy="88" r="22" fill="#111827" stroke="#0F172A" stroke-width="8"/>
-                        <circle cx="63" cy="88" r="9" fill="#0F172A"/>
-                        <circle cx="173" cy="88" r="22" fill="#111827" stroke="#0F172A" stroke-width="8"/>
-                        <circle cx="173" cy="88" r="9" fill="#0F172A"/>
-                    </g>
-                </g>
-            </svg>
-        </div>
+        <a class="logo-mark" href="#" aria-label="B&B Pro Detailing home">
+            <img src="assets/logo.svg" alt="B&B Pro Detailing logo">
+        </a>
         <div class="nav-links">
             <a href="#services">Services</a>
             <a href="#why-us">Why Us</a>

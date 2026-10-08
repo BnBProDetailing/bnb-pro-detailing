@@ -276,6 +276,33 @@
             font-size: 1.2rem;
         }
 
+        .pricing-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 0.8rem 1.5rem;
+            text-align: left;
+            margin: 0 0 2rem 0;
+            color: var(--text-muted);
+        }
+
+        .pricing-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.8rem 1rem;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(212, 175, 55, 0.12);
+            border-radius: 8px;
+        }
+
+        .pricing-list strong {
+            color: var(--gold-accent);
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
         .highlights {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -492,7 +519,7 @@
 
                     <text x="157" y="118" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="86" font-weight="800" letter-spacing="-4" fill="#F3F6FB">B&amp;B</text>
 
-                    <path d="M111 138C145 127 180 121 214 121C257 121 289 130 317 148L342 133C323 107 300 89 273 78C244 66 191 59 147 63C114 66 74 77 45 100L72 115C82 117 98 120 111 138Z" fill="#1f2a35" opacity="0.9"/>
+                    <path d="M111 138C145 127 180 121 214 121C257 121 289 130 317 148L342 133C323 107 300 89 273 78C244 66 191 59 147 63C114 66 74 77 45 100L72 115C82 117 98 120 111 138Z" fill="#d4af37" opacity="0.9"/>
 
                     <g transform="translate(70,142)">
                         <path d="M8 56L29 39L70 32L104 32L142 41L174 51L204 61L214 81L201 89H18C9 89 0 81 0 72C0 66 2 61 8 56Z" fill="#111827" stroke="#111827" stroke-width="6" stroke-linejoin="round"/>
@@ -527,49 +554,64 @@
     </section>
 
     <section class="section" id="services">
-        <h2 class="section-title">Premium Packages</h2>
-        <p class="section-subtitle">Tailored detailing solutions for every vehicle and budget</p>
+        <h2 class="section-title">Service Pricing</h2>
+        <p class="section-subtitle">Transparent pricing for complete detailing and premium add-on services</p>
         <div class="grid">
             <div class="card">
-                <div class="card-icon"><i class="fas fa-wind"></i></div>
-                <h3>Interior Deep Clean</h3>
-                <div class="price">$120<span class="price-small">/service</span></div>
+                <div class="card-icon"><i class="fas fa-car-side"></i></div>
+                <h3>Base Package - Sedans</h3>
+                <div class="price">$95<span class="price-small">/detail</span></div>
                 <ul>
-                    <li>Full Cabin Vacuum & Blowout</li>
-                    <li>Hot Water Extractor Stain Removal</li>
-                    <li>Dashboard & Console Deep Clean</li>
-                    <li>Leather Conditioning & Protectant</li>
-                    <li>Streak-Free Window Clarity</li>
+                    <li>Full Interior & Exterior Detail</li>
+                    <li>Interior vacuuming and wipe down</li>
+                    <li>Exterior wash and finish prep</li>
                 </ul>
                 <a href="#contact" class="cta-btn" style="padding: 0.7rem 1.5rem; font-size: 0.9rem;">Select Package</a>
             </div>
 
             <div class="card">
-                <div class="card-icon"><i class="fas fa-sparkles"></i></div>
-                <h3>Exterior Polish</h3>
-                <div class="price">$100<span class="price-small">/service</span></div>
+                <div class="card-icon"><i class="fas fa-car"></i></div>
+                <h3>Base Package - SUVs</h3>
+                <div class="price">$110<span class="price-small">/detail</span></div>
                 <ul>
-                    <li>Premium Scratch-Free Hand Wash</li>
-                    <li>Clay Bar Treatment & Decontamination</li>
-                    <li>High-Gloss Machine Wax Protection</li>
-                    <li>Wheel & Tire Deep Scrub</li>
-                    <li>Trim Restoration & Tire Dress</li>
+                    <li>Full Interior & Exterior Detail</li>
+                    <li>Enhanced cleaning for larger cabins</li>
+                    <li>Detailed finish for daily driving</li>
                 </ul>
                 <a href="#contact" class="cta-btn" style="padding: 0.7rem 1.5rem; font-size: 0.9rem;">Select Package</a>
             </div>
 
             <div class="card">
-                <div class="card-icon"><i class="fas fa-crown"></i></div>
-                <h3>Signature Complete</h3>
-                <div class="price">$220<span class="price-small">/service</span></div>
+                <div class="card-icon"><i class="fas fa-truck"></i></div>
+                <h3>Base Package - Trucks</h3>
+                <div class="price">$135<span class="price-small">/detail</span></div>
                 <ul>
-                    <li>Interior Deep Clean + Exterior Polish</li>
-                    <li>Paint Enhancement & Gloss Boost</li>
-                    <li>Leather/Trim Conditioning</li>
-                    <li>Engine Bay & Wheel Well Detail</li>
-                    <li>Final Inspection & Spray Sealant</li>
+                    <li>Full Interior & Exterior Detail</li>
+                    <li>Built for larger vehicle surfaces</li>
+                    <li>Heavy-duty cleaning and finish</li>
                 </ul>
                 <a href="#contact" class="cta-btn" style="padding: 0.7rem 1.5rem; font-size: 0.9rem;">Select Package</a>
+            </div>
+
+            <div class="card" style="grid-column: 1 / -1;">
+                <div class="card-icon"><i class="fas fa-plus-circle"></i></div>
+                <h3>Add-On Services</h3>
+                <ul class="pricing-list">
+                    <li><span>Pet Hair & Heavy Dirt</span><strong>Varies</strong></li>
+                    <li><span>Wax</span><strong>Varies</strong></li>
+                    <li><span>Engine Bay Detail</span><strong>$20+</strong></li>
+                    <li><span>Headlight Restoration</span><strong>$70+</strong></li>
+                    <li><span>Seat Shampoo & Extraction</span><strong>$40+</strong></li>
+                    <li><span>Carpet & Floor Mat Extraction</span><strong>$40+</strong></li>
+                    <li><span>Leather Cleaning & Conditioning</span><strong>$30+</strong></li>
+                    <li><span>Interior Vacuum</span><strong>$25+</strong></li>
+                    <li><span>Interior & Exterior Glass Cleaning</span><strong>$25+</strong></li>
+                    <li><span>Tire Dressing Applied</span><strong>$15+</strong></li>
+                    <li><span>Door Jambs Cleaned</span><strong>$15+</strong></li>
+                    <li><span>Dashboard, Console & Interior Surfaces Wiped</span><strong>$25+</strong></li>
+                    <li><span>Odor Removal</span><strong>$20+</strong></li>
+                    <li><span>Rim Cleaning</span><strong>$25+</strong></li>
+                </ul>
             </div>
         </div>
     </section>
@@ -640,9 +682,23 @@
                         <label for="service">Service Needed *</label>
                         <select id="service" name="service" required>
                             <option value="">Select a service...</option>
-                            <option value="interior">Interior Deep Clean - $120</option>
-                            <option value="exterior">Exterior Polish - $100</option>
-                            <option value="signature">Signature Complete - $220</option>
+                            <option value="sedan-base">Base Package - Sedan - $95</option>
+                            <option value="suv-base">Base Package - SUV - $110</option>
+                            <option value="truck-base">Base Package - Truck - $135</option>
+                            <option value="pet-hair">Pet Hair & Heavy Dirt - Varies</option>
+                            <option value="wax">Wax - Varies</option>
+                            <option value="engine-bay">Engine Bay Detail - $20+</option>
+                            <option value="headlights">Headlight Restoration - $70+</option>
+                            <option value="seat-shampoo">Seat Shampoo & Extraction - $40+</option>
+                            <option value="carpet-extraction">Carpet & Floor Mat Extraction - $40+</option>
+                            <option value="leather">Leather Cleaning & Conditioning - $30+</option>
+                            <option value="vacuum">Interior Vacuum - $25+</option>
+                            <option value="glass">Interior & Exterior Glass Cleaning - $25+</option>
+                            <option value="tire-dressing">Tire Dressing Applied - $15+</option>
+                            <option value="door-jambs">Door Jambs Cleaned - $15+</option>
+                            <option value="dashboard">Dashboard, Console & Interior Surfaces Wiped - $25+</option>
+                            <option value="odor">Odor Removal - $20+</option>
+                            <option value="rim-cleaning">Rim Cleaning - $25+</option>
                         </select>
                     </div>
                     <div class="form-group">

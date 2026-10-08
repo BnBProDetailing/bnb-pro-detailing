@@ -1,0 +1,37 @@
+<svg width="850" height="850" viewBox="0 0 850 850" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="shieldBlue" x1="425" y1="60" x2="425" y2="740" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1A73E8"/>
+      <stop offset="1" stop-color="#123D7A"/>
+    </linearGradient>
+    <linearGradient id="goldGlow" x1="425" y1="340" x2="425" y2="670" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F5D67A" stop-opacity="0.8"/>
+      <stop offset="1" stop-color="#D4AF37" stop-opacity="0.15"/>
+    </linearGradient>
+  </defs>
+
+  <path d="M425 60L680 150V365C680 520 585 640 425 740C265 640 170 520 170 365V150L425 60Z" fill="url(#shieldBlue)" stroke="#111827" stroke-width="18"/>
+  <path d="M425 94L640 170V357C640 487 570 582 425 660C280 582 210 487 210 357V170L425 94Z" fill="black" fill-opacity="0.08"/>
+
+  <path d="M240 190H610V290C610 305 598 317 583 317H267C252 317 240 305 240 290V190Z" fill="#0F172A" stroke="#111827" stroke-width="14"/>
+  <text x="425" y="273" text-anchor="middle" font-family="Segoe UI, Tahoma, sans-serif" font-size="130" font-weight="800" fill="#F8FAFC" letter-spacing="-8">B&amp;B</text>
+
+  <g opacity="0.95">
+    <path d="M298 415C322 380 362 360 405 360C454 360 505 374 545 402C565 416 577 430 592 447C595 424 607 406 627 392C650 375 683 378 704 399C722 418 730 447 723 474C711 522 683 565 649 599C617 631 586 655 546 672C504 690 454 699 405 697C342 694 286 676 242 638C202 602 176 564 162 518C150 480 156 446 182 421C206 398 250 392 298 415Z" fill="#0A0F18" stroke="#111827" stroke-width="14"/>
+
+    <path d="M286 466C312 430 354 410 398 410C445 410 493 426 528 455C561 482 592 525 603 572C612 609 600 648 566 669C531 691 476 688 424 682C382 677 340 668 304 648C273 631 247 607 231 575C216 544 220 511 246 492C261 481 272 473 286 466Z" fill="#0B1220" stroke="#1E293B" stroke-width="10"/>
+
+    <path d="M294 501C331 465 379 446 423 446C478 446 533 464 569 492C580 500 585 515 580 529C570 555 528 598 472 610C430 619 380 618 343 604C311 591 278 567 266 541C260 527 269 514 294 501Z" fill="#0F172A" stroke="#1E293B" stroke-width="8"/>
+
+    <path d="M360 470C377 455 390 447 413 440C444 431 480 431 511 441C531 448 548 457 562 469C547 465 526 471 504 482C486 491 465 499 440 503C407 509 381 502 360 470Z" fill="#D4AF37" fill-opacity="0.35"/>
+
+    <path d="M543 458C561 459 578 464 593 474C610 485 624 500 632 518C640 537 642 561 630 581C617 604 585 625 545 630C515 634 487 628 463 612C486 598 505 580 521 560C536 539 548 517 554 494C556 486 551 473 543 458Z" fill="#111827" stroke="#1F2937" stroke-width="8"/>
+
+    <path d="M266 575C331 604 380 610 444 610C498 610 550 598 590 574" stroke="#111827" stroke-width="12" stroke-linecap="round"/>
+    <path d="M254 598C294 628 372 646 444 646C513 646 578 630 626 597" stroke="#1A73E8" stroke-width="10" stroke-linecap="round"/>
+  </g>
+
+  <path d="M338 734H512L483 769H367L338 734Z" fill="#0A0F18" stroke="#111827" stroke-width="10"/>
+
+  <text x="425" y="805" text-anchor="middle" font-family="Segoe UI, Tahoma, sans-serif" font-size="86" font-weight="800" fill="#1A73E8" letter-spacing="4">AUTO DETAIL</text>
+</svg>

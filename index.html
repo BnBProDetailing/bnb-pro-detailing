@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="B&B Pro Detailing offers premium mobile car detailing services for interior deep cleaning and exterior paint restoration.">
+    <title>B&B Pro Detailing | Premium Mobile Car Detailing</title>
+    <style>
+        :root {
+            --black-primary: #0a0f18;
+            --black-secondary: #121926;
+            --blue-brand: #1a73e8;
+            --blue-hover: #155cb4;
+            --gold-accent: #d4af37;
+            --gold-hover: #aa8c2c;
+            --text-light: #f8fafc;
+            --text-muted: #94a3b8;
+            --card-shadow: rgba(11, 16, 27, 0.5);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--black-primary);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        nav {
+            background-color: var(--black-secondary);
+            border-bottom: 2px solid var(--gold-accent);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--text-light);
+        }
+
+        .logo span {
+            color: var(--gold-accent);
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--blue-brand);
+        }
+
+        .hero {
+            padding: 6rem 2rem;
+            text-align: center;
+            background: linear-gradient(rgba(10, 15, 24, 0.82), rgba(10, 15, 24, 0.95)),
+                        url('https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 span {
+            color: var(--blue-brand);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 2rem auto;
+        }
+
+        .cta-btn {
+            background-color: var(--blue-brand);
+            color: white;
+            padding: 0.75rem 2rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.3s, transform 0.2s;
+            box-shadow: 0 4px 15px rgba(26, 115, 232, 0.4);
+        }
+
+        .cta-btn:hover {
+            background-color: var(--blue-hover);
+            transform: translateY(-2px);
+        }
+
+        .banner-strip {
+            background-color: var(--gold-accent);
+            color: var(--black-primary);
+            text-align: center;
+            padding: 0.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+        }
+
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.25rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--gold-accent);
+            margin: 0.5rem auto 0 auto;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background-color: var(--black-secondary);
+            border: 1px solid rgba(214, 175, 55, 0.1);
+            border-radius: 8px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: transform 0.3s, border-color 0.3s;
+            box-shadow: 0 12px 28px var(--card-shadow);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold-accent);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--blue-brand);
+        }
+
+        .price {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--gold-accent);
+            margin-bottom: 1.5rem;
+        }
+
+        .card ul {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 2rem;
+            color: var(--text-muted);
+        }
+
+        .card ul li {
+            margin-bottom: 0.75rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .card ul li::before {
+            content: '✓';
+            color: var(--gold-accent);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .highlight {
+            background: var(--black-secondary);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .highlight .number {
+            display: block;
+            color: var(--gold-accent);
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight p {
+            color: var(--text-muted);
+        }
+
+        .contact-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+        }
+
+        .contact-info {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .contact-info h3 {
+            color: var(--gold-accent);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 1rem;
+            color: var(--text-muted);
+        }
+
+        .contact-info .detail {
+            display: block;
+            margin: 0.5rem 0;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .contact-form {
+            flex: 1.5;
+            min-width: 300px;
+            background-color: var(--black-secondary);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid rgba(26, 115, 232, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: var(--black-primary);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--blue-brand);
+        }
+
+        .submit-btn {
+            background-color: var(--gold-accent);
+            color: var(--black-primary);
+            width: 100%;
+            padding: 0.75rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--gold-hover);
+        }
+
+        footer {
+            background-color: var(--black-secondary);
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.25rem;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-links a {
+                margin: 0 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">B&B <span>Pro Detailing</span></div>
+        <div class="nav-links">
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#contact">Book Now</a>
+        </div>
+    </nav>
+
+    <div class="banner-strip">✨ 100% Mobile Service — We Bring The Shine To Your Doorstep! ✨</div>
+
+    <section class="hero">
+        <h1>Showroom Quality <span>At Your Home</span></h1>
+        <p>B&B Pro Detailing specializes in high-end, convenient interior deep cleaning and exterior paint restoration for busy vehicle owners.</p>
+        <a href="#contact" class="cta-btn">Schedule Your Mobile Detail</a>
+    </section>
+
+    <section class="section" id="services">
+        <h2 class="section-title">Our Premium Packages</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Interior Deep Clean</h3>
+                <div class="price">From $120</div>
+                <ul>
+                    <li>Full Cabin Vacuum & Blowout</li>
+                    <li>Hot Water Extractor Stain Removal</li>
+                    <li>Dashboard, Console & Door Deep Clean</li>
+                    <li>Leather Conditioning & Protectant</li>
+                    <li>Streak-Free Window Clarity</li>
+                </ul>
+                <a href="#contact" class="cta-btn" style="padding: 0.5rem 1.5rem; font-size: 0.95rem;">Select Package</a>
+            </div>
+
+            <div class="card">
+                <h3>Exterior Showroom Polish</h3>
+                <div class="price">From $100</div>
+                <ul>
+                    <li>Premium Scratch-Free Hand Wash</li>
+                    <li>Clay Bar Treatment & Decontamination</li>
+                    <li>High-Gloss Machine Wax Protection</li>
+                    <li>Wheel, Barrel & Tire Deep Scrub</li>
+                    <li>Trim Restoration & Tire Dress</li>
+                </ul>
+                <a href="#contact" class="cta-btn" style="padding: 0.5rem 1.5rem; font-size: 0.95rem;">Select Package</a>
+            </div>
+
+            <div class="card">
+                <h3>Signature Complete Detail</h3>
+                <div class="price">From $220</div>
+                <ul>
+                    <li>Interior Deep Cleaning + Exterior Polish</li>
+                    <li>Paint Enhancement & Gloss Boost</li>
+                    <li>Leather/Trim Conditioning Treatment</li>
+                    <li>Engine Bay & Wheel Well Detailing</li>
+                    <li>Final Inspection & Spray Sealant</li>
+                </ul>
+                <a href="#contact" class="cta-btn" style="padding: 0.5rem 1.5rem; font-size: 0.95rem;">Select Package</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="about">
+        <h2 class="section-title">Why Drivers Choose B&B</h2>
+        <div class="highlights">
+            <div class="highlight">
+                <span class="number">100%</span>
+                <p>Mobile detailing service with convenience built in.</p>
+            </div>
+            <div class="highlight">
+                <span class="number">5★</span>
+                <p>Premium service focused on quality, finish, and care.</p>
+            </div>
+            <div class="highlight">
+                <span class="number">Same</span>
+                <p>Day availability for select bookings and appointments.</p>
+            </div>
+            <div class="highlight">
+                <span class="number">1:1</span>
+                <p>Personal attention from start to finish on every vehicle.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="contact">
+        <h2 class="section-title">Book Your Detail</h2>
+        <div class="contact-flex">
+            <div class="contact-info">
+                <h3>Let’s make your car shine.</h3>
+                <p>Reserve your appointment for a premium mobile detailing service tailored to your vehicle’s needs.</p>
+                <span class="detail">📍 Serving homes, offices, and apartments across the local area</span>
+                <span class="detail">📞 (555) 123-4567</span>
+                <span class="detail">✉️ bookings@bnbprodetailing.com</span>
+            </div>
+
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="vehicle">Vehicle Type</label>
+                    <select id="vehicle" name="vehicle">
+                        <option value="sedan">Sedan</option>
+                        <option value="suv">SUV</option>
+                        <option value="truck">Truck</option>
+                        <option value="luxury">Luxury / Performance</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="service">Service Needed</label>
+                    <select id="service" name="service">
+                        <option value="interior">Interior Deep Clean</option>
+                        <option value="exterior">Exterior Showroom Polish</option>
+                        <option value="signature">Signature Complete Detail</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Tell us about your vehicle</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Let us know any specific concerns, paint issues, or interior needs."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Request My Detail</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2026 B&B Pro Detailing | Premium Mobile Car Detailing Services
+    </footer>
+</body>
+</html>

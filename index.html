@@ -37,7 +37,7 @@
         nav {
             background: linear-gradient(135deg, var(--black-secondary) 0%, var(--black-tertiary) 100%);
             border-bottom: 2px solid var(--gold-accent);
-            padding: 0.5rem 2rem;
+            padding: 0.6rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -49,11 +49,12 @@
         }
 
         .logo-mark {
-            width: 200px;
-            height: 90px;
+            width: 120px;
+            height: 60px;
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-shrink: 0;
         }
 
         .logo-mark svg {
@@ -70,9 +71,9 @@
         .nav-links a {
             color: var(--text-light);
             font-weight: 500;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             position: relative;
-            padding: 0.5rem 0;
+            padding: 0.4rem 0;
         }
 
         .nav-links a::after {
@@ -93,11 +94,11 @@
             background: linear-gradient(90deg, var(--gold-accent) 0%, #e8c547 50%, var(--gold-accent) 100%);
             color: var(--black-primary);
             text-align: center;
-            padding: 0.75rem;
+            padding: 0.6rem;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 2px;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
         }
 
         .hero {
@@ -464,9 +465,10 @@
             .hero h1 { font-size: 2.25rem; }
             .hero h1 span { font-size: 2rem; }
             .hero { padding: 5rem 1.5rem; }
-            nav { flex-direction: column; gap: 0.5rem; }
-            .logo-mark { width: 160px; height: 75px; }
-            .nav-links { gap: 1rem; margin-top: 0.5rem; }
+            nav { flex-direction: row; gap: 1rem; padding: 0.5rem 1rem; }
+            .logo-mark { width: 100px; height: 50px; }
+            .nav-links { gap: 1rem; }
+            .nav-links a { font-size: 0.8rem; }
             .section { padding: 4rem 1.5rem; }
             .section-title { font-size: 2rem; }
             .form-row { grid-template-columns: 1fr; }
@@ -478,22 +480,40 @@
 <body>
     <nav>
         <div class="logo-mark">
-            <svg viewBox="0 0 400 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg viewBox="0 0 200 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Outer Shield Border -->
+                <path d="M50 10L95 25V60C95 85 70 100 50 110C30 100 5 85 5 60V25L50 10Z" fill="none" stroke="#111827" stroke-width="3"/>
+                
+                <!-- Inner Shield -->
+                <path d="M50 18L88 30V58C88 78 68 92 50 102C32 92 12 78 12 58V30L50 18Z" fill="#1a73e8" stroke="#1a73e8" stroke-width="2"/>
+                
+                <!-- Shield Highlight/Gradient effect -->
+                <path d="M50 18L88 30V58C88 78 68 92 50 102C32 92 12 78 12 58V30L50 18Z" fill="url(#shieldGradient)" opacity="0.3"/>
+                
+                <!-- B&B Text on Shield -->
+                <text x="50" y="65" text-anchor="middle" font-family="Segoe UI, Arial" font-size="32" font-weight="800" fill="#f8fafc">B&amp;B</text>
+                
+                <!-- Car silhouette -->
+                <g transform="translate(140, 30)">
+                    <!-- Car body -->
+                    <rect x="5" y="20" width="40" height="18" rx="2" fill="none" stroke="#111827" stroke-width="2"/>
+                    <!-- Car roof -->
+                    <path d="M 12 20 L 20 8 L 38 8 L 38 20" fill="none" stroke="#111827" stroke-width="2" stroke-linecap="round"/>
+                    <!-- Left wheel -->
+                    <circle cx="15" cy="42" r="6" fill="none" stroke="#1a73e8" stroke-width="2"/>
+                    <!-- Right wheel -->
+                    <circle cx="38" cy="42" r="6" fill="none" stroke="#1a73e8" stroke-width="2"/>
+                </g>
+                
+                <!-- AUTO DETAIL text -->
+                <text x="100" y="90" text-anchor="middle" font-family="Segoe UI, Arial" font-size="14" font-weight="700" fill="#1a73e8" letter-spacing="1">AUTO DETAIL</text>
+                
                 <defs>
-                    <linearGradient id="shieldGrad" x1="100" y1="20" x2="100" y2="170">
-                        <stop offset="0%" stop-color="#1A73E8"/>
-                        <stop offset="100%" stop-color="#0d47a1"/>
+                    <linearGradient id="shieldGradient" x1="50" y1="18" x2="50" y2="102">
+                        <stop offset="0%" stop-color="#ffffff"/>
+                        <stop offset="100%" stop-color="#000000"/>
                     </linearGradient>
                 </defs>
-                <!-- Shield -->
-                <path d="M100 15L145 35V80C145 115 120 140 100 155C80 140 55 115 55 80V35L100 15Z" fill="url(#shieldGrad)" stroke="#111827" stroke-width="2"/>
-                <!-- B&B Text -->
-                <text x="100" y="110" text-anchor="middle" font-family="Segoe UI" font-size="48" font-weight="800" fill="#F8FAFC">B&amp;B</text>
-                <!-- Car (simplified) -->
-                <ellipse cx="200" cy="80" rx="50" ry="28" fill="none" stroke="#1A73E8" stroke-width="2"/>
-                <path d="M175 95L225 95M180 85L220 85M185 75L215 75" stroke="#1A73E8" stroke-width="2" stroke-linecap="round"/>
-                <!-- AUTO DETAIL Text -->
-                <text x="200" y="155" text-anchor="middle" font-family="Segoe UI" font-size="24" font-weight="700" fill="#1A73E8" letter-spacing="2">AUTO DETAIL</text>
             </svg>
         </div>
         <div class="nav-links">

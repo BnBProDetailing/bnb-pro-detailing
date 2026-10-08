@@ -5,24 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="B&B Pro Detailing offers premium mobile car detailing services for interior deep cleaning and exterior paint restoration.">
     <title>B&B Pro Detailing | Premium Mobile Car Detailing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --black-primary: #0a0f18;
             --black-secondary: #121926;
+            --black-tertiary: #1a1f2e;
             --blue-brand: #1a73e8;
             --blue-hover: #155cb4;
+            --blue-light: #e3f2fd;
             --gold-accent: #d4af37;
             --gold-hover: #aa8c2c;
+            --gold-light: #f5ead3;
             --text-light: #f8fafc;
             --text-muted: #94a3b8;
-            --card-shadow: rgba(11, 16, 27, 0.5);
+            --card-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+            --card-hover: 0 30px 60px rgba(212, 175, 55, 0.15);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         html {
@@ -33,10 +38,13 @@
             background-color: var(--black-primary);
             color: var(--text-light);
             line-height: 1.6;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
         }
 
         a {
             text-decoration: none;
+            transition: all 0.3s ease;
         }
 
         img {
@@ -45,150 +53,321 @@
         }
 
         nav {
-            background-color: var(--black-secondary);
+            background: linear-gradient(135deg, var(--black-secondary) 0%, var(--black-tertiary) 100%);
             border-bottom: 2px solid var(--gold-accent);
-            padding: 1rem 2rem;
+            padding: 1.25rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: sticky;
             top: 0;
             z-index: 1000;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.75rem;
+            font-weight: 700;
             color: var(--text-light);
+            letter-spacing: 1px;
         }
 
         .logo span {
             color: var(--gold-accent);
         }
 
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
         .nav-links a {
             color: var(--text-light);
-            text-decoration: none;
-            margin-left: 1.5rem;
             font-weight: 500;
-            transition: color 0.3s;
+            font-size: 0.95rem;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--gold-accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
         }
 
         .nav-links a:hover {
-            color: var(--blue-brand);
-        }
-
-        .hero {
-            padding: 6rem 2rem;
-            text-align: center;
-            background: linear-gradient(rgba(10, 15, 24, 0.82), rgba(10, 15, 24, 0.95)),
-                        url('https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .hero h1 span {
-            color: var(--blue-brand);
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            color: var(--text-muted);
-            max-width: 700px;
-            margin: 0 auto 2rem auto;
-        }
-
-        .cta-btn {
-            background-color: var(--blue-brand);
-            color: white;
-            padding: 0.75rem 2rem;
-            font-size: 1.1rem;
-            font-weight: bold;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            transition: background 0.3s, transform 0.2s;
-            box-shadow: 0 4px 15px rgba(26, 115, 232, 0.4);
-        }
-
-        .cta-btn:hover {
-            background-color: var(--blue-hover);
-            transform: translateY(-2px);
+            color: var(--gold-accent);
         }
 
         .banner-strip {
-            background-color: var(--gold-accent);
+            background: linear-gradient(90deg, var(--gold-accent) 0%, #e8c547 50%, var(--gold-accent) 100%);
             color: var(--black-primary);
             text-align: center;
-            padding: 0.5rem;
-            font-weight: bold;
+            padding: 0.75rem;
+            font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 2px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.9; }
+        }
+
+        .hero {
+            padding: 8rem 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(10, 15, 24, 0.85) 0%, rgba(18, 25, 38, 0.92) 100%),
+                        url('https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+            border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(26, 115, 232, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            line-height: 1.2;
+            animation: fadeInDown 0.8s ease;
+        }
+
+        .hero h1 span {
+            color: var(--gold-accent);
+            display: block;
+            font-size: 3rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 2.5rem auto;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease 0.4s both;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .cta-btn {
+            background-color: var(--gold-accent);
+            color: var(--black-primary);
+            padding: 1rem 2.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border: 2px solid var(--gold-accent);
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .cta-btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .cta-btn:hover {
+            background-color: var(--gold-hover);
+            border-color: var(--gold-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
+        }
+
+        .cta-btn-secondary {
+            background-color: transparent;
+            color: var(--gold-accent);
+            border: 2px solid var(--gold-accent);
+        }
+
+        .cta-btn-secondary:hover {
+            background-color: var(--gold-accent);
+            color: var(--black-primary);
         }
 
         .section {
-            padding: 5rem 2rem;
-            max-width: 1100px;
+            padding: 6rem 2rem;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
         .section-title {
+            font-family: 'Playfair Display', serif;
             text-align: center;
-            font-size: 2.25rem;
-            margin-bottom: 3rem;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
             position: relative;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 3rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .section-title::after {
             content: '';
             display: block;
-            width: 60px;
-            height: 3px;
-            background-color: var(--gold-accent);
-            margin: 0.5rem auto 0 auto;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gold-accent) 0%, var(--blue-brand) 100%);
+            margin: 1rem auto 0 auto;
+            border-radius: 2px;
         }
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
         }
 
         .card {
-            background-color: var(--black-secondary);
-            border: 1px solid rgba(214, 175, 55, 0.1);
-            border-radius: 8px;
-            padding: 2.5rem 2rem;
+            background: linear-gradient(135deg, var(--black-tertiary) 0%, var(--black-secondary) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            border-radius: 12px;
+            padding: 2.5rem;
             text-align: center;
-            transition: transform 0.3s, border-color 0.3s;
-            box-shadow: 0 12px 28px var(--card-shadow);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: var(--card-shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(135deg, var(--gold-accent), var(--blue-brand), var(--gold-accent));
+            border-radius: 12px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+
+        .card:hover::before {
+            opacity: 0.3;
         }
 
         .card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
             border-color: var(--gold-accent);
+            box-shadow: var(--card-hover);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            color: var(--gold-accent);
+            margin-bottom: 1rem;
         }
 
         .card h3 {
+            font-family: 'Playfair Display', serif;
             font-size: 1.5rem;
             margin-bottom: 1rem;
-            color: var(--blue-brand);
+            color: var(--text-light);
+            letter-spacing: 0.5px;
         }
 
         .price {
-            font-size: 2rem;
-            font-weight: bold;
+            font-size: 2.5rem;
+            font-weight: 700;
             color: var(--gold-accent);
             margin-bottom: 1.5rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .price-small {
+            font-size: 0.85rem;
+            color: var(--text-muted);
         }
 
         .card ul {
@@ -201,7 +380,8 @@
         .card ul li {
             margin-bottom: 0.75rem;
             position: relative;
-            padding-left: 1.5rem;
+            padding-left: 1.75rem;
+            font-size: 0.95rem;
         }
 
         .card ul li::before {
@@ -210,71 +390,135 @@
             position: absolute;
             left: 0;
             font-weight: bold;
+            font-size: 1.2rem;
         }
 
         .highlights {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
             margin-top: 2rem;
         }
 
         .highlight {
-            background: var(--black-secondary);
-            border: 1px solid rgba(255,255,255,0.06);
-            border-radius: 8px;
-            padding: 1.5rem;
+            background: linear-gradient(135deg, rgba(26, 115, 232, 0.1) 0%, rgba(212, 175, 55, 0.05) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 12px;
+            padding: 2rem;
             text-align: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .highlight:hover {
+            border-color: var(--gold-accent);
+            background: linear-gradient(135deg, rgba(26, 115, 232, 0.15) 0%, rgba(212, 175, 55, 0.1) 100%);
+            transform: translateY(-5px);
         }
 
         .highlight .number {
             display: block;
             color: var(--gold-accent);
-            font-size: 2rem;
-            font-weight: bold;
+            font-size: 2.5rem;
+            font-weight: 700;
             margin-bottom: 0.5rem;
+            font-family: 'Playfair Display', serif;
         }
 
         .highlight p {
             color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.5;
         }
 
         .contact-flex {
             display: flex;
             flex-wrap: wrap;
             gap: 3rem;
+            align-items: stretch;
         }
 
         .contact-info {
             flex: 1;
             min-width: 280px;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--black-tertiary) 0%, var(--black-secondary) 100%);
+            border-radius: 12px;
+            border: 1px solid rgba(212, 175, 55, 0.15);
         }
 
         .contact-info h3 {
+            font-family: 'Playfair Display', serif;
             color: var(--gold-accent);
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.75rem;
+            letter-spacing: 0.5px;
         }
 
         .contact-info p {
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             color: var(--text-muted);
+            line-height: 1.7;
         }
 
-        .contact-info .detail {
-            display: block;
-            margin: 0.5rem 0;
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            margin: 1rem 0;
             color: var(--text-light);
             font-weight: 500;
         }
 
-        .contact-form {
+        .contact-detail i {
+            color: var(--gold-accent);
+            margin-right: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: rgba(212, 175, 55, 0.1);
+            border: 1px solid var(--gold-accent);
+            border-radius: 50%;
+            color: var(--gold-accent);
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--gold-accent);
+            color: var(--black-primary);
+            transform: translateY(-3px);
+        }
+
+        .booking-form {
             flex: 1.5;
             min-width: 300px;
-            background-color: var(--black-secondary);
-            padding: 2rem;
-            border-radius: 8px;
+            background: linear-gradient(135deg, var(--black-tertiary) 0%, var(--black-secondary) 100%);
+            padding: 2.5rem;
+            border-radius: 12px;
             border: 1px solid rgba(26, 115, 232, 0.2);
+            box-shadow: var(--card-shadow);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem;
+        }
+
+        .form-row.full {
+            grid-template-columns: 1fr;
         }
 
         .form-group {
@@ -283,54 +527,135 @@
 
         .form-group label {
             display: block;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.6rem;
             font-size: 0.9rem;
-            color: var(--text-muted);
+            font-weight: 600;
+            color: var(--gold-accent);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .form-group input,
         .form-group textarea,
         .form-group select {
             width: 100%;
-            padding: 0.75rem;
+            padding: 0.9rem;
             background-color: var(--black-primary);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1.5px solid rgba(212, 175, 55, 0.2);
             color: white;
-            border-radius: 4px;
-            font-size: 1rem;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--text-muted);
         }
 
         .form-group input:focus,
         .form-group textarea:focus,
         .form-group select:focus {
             outline: none;
-            border-color: var(--blue-brand);
+            border-color: var(--gold-accent);
+            background-color: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+        }
+
+        .form-group select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23d4af37' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 0.9rem center;
+            padding-right: 2.5rem;
         }
 
         .submit-btn {
-            background-color: var(--gold-accent);
+            background: linear-gradient(135deg, var(--gold-accent) 0%, var(--gold-hover) 100%);
             color: var(--black-primary);
             width: 100%;
-            padding: 0.75rem;
-            font-size: 1.1rem;
-            font-weight: bold;
+            padding: 1rem;
+            font-size: 1rem;
+            font-weight: 700;
             border: none;
-            border-radius: 4px;
+            border-radius: 8px;
             cursor: pointer;
-            transition: background 0.3s;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .submit-btn:hover::before {
+            width: 300px;
+            height: 300px;
         }
 
         .submit-btn:hover {
-            background-color: var(--gold-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(212, 175, 55, 0.4);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .form-success {
+            display: none;
+            padding: 1.5rem;
+            background: rgba(26, 115, 232, 0.1);
+            border: 1px solid var(--blue-brand);
+            border-radius: 8px;
+            color: var(--text-light);
+            margin-top: 1rem;
+            text-align: center;
+            animation: slideIn 0.3s ease;
+        }
+
+        .form-success.show {
+            display: block;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         footer {
-            background-color: var(--black-secondary);
+            background: linear-gradient(135deg, var(--black-secondary) 0%, var(--black-tertiary) 100%);
             text-align: center;
-            padding: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 2.5rem;
+            border-top: 2px solid rgba(212, 175, 55, 0.2);
             color: var(--text-muted);
             font-size: 0.9rem;
+        }
+
+        footer .divider {
+            color: var(--gold-accent);
+            margin: 0 0.5rem;
         }
 
         @media (max-width: 768px) {
@@ -338,23 +663,85 @@
                 font-size: 2.25rem;
             }
 
+            .hero h1 span {
+                font-size: 2rem;
+            }
+
+            .hero {
+                padding: 5rem 1.5rem;
+            }
+
             nav {
                 flex-direction: column;
                 gap: 1rem;
             }
 
+            .nav-links {
+                gap: 1rem;
+            }
+
             .nav-links a {
-                margin: 0 0.75rem;
+                font-size: 0.9rem;
+            }
+
+            .section {
+                padding: 4rem 1.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .contact-flex {
+                gap: 2rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .cta-btn {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+
+            .hero h1 span {
+                font-size: 1.5rem;
+            }
+
+            .price {
+                font-size: 1.75rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            nav {
+                padding: 1rem;
+            }
+
+            .logo {
+                font-size: 1.25rem;
             }
         }
     </style>
 </head>
 <body>
     <nav>
-        <div class="logo">B&B <span>Pro Detailing</span></div>
+        <div class="logo">B&B <span>Pro</span></div>
         <div class="nav-links">
             <a href="#services">Services</a>
-            <a href="#about">About</a>
+            <a href="#why-us">Why Us</a>
             <a href="#contact">Book Now</a>
         </div>
     </nav>
@@ -362,130 +749,236 @@
     <div class="banner-strip">✨ 100% Mobile Service — We Bring The Shine To Your Doorstep! ✨</div>
 
     <section class="hero">
-        <h1>Showroom Quality <span>At Your Home</span></h1>
-        <p>B&B Pro Detailing specializes in high-end, convenient interior deep cleaning and exterior paint restoration for busy vehicle owners.</p>
-        <a href="#contact" class="cta-btn">Schedule Your Mobile Detail</a>
-    </section>
-
-    <section class="section" id="services">
-        <h2 class="section-title">Our Premium Packages</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Interior Deep Clean</h3>
-                <div class="price">From $120</div>
-                <ul>
-                    <li>Full Cabin Vacuum & Blowout</li>
-                    <li>Hot Water Extractor Stain Removal</li>
-                    <li>Dashboard, Console & Door Deep Clean</li>
-                    <li>Leather Conditioning & Protectant</li>
-                    <li>Streak-Free Window Clarity</li>
-                </ul>
-                <a href="#contact" class="cta-btn" style="padding: 0.5rem 1.5rem; font-size: 0.95rem;">Select Package</a>
-            </div>
-
-            <div class="card">
-                <h3>Exterior Showroom Polish</h3>
-                <div class="price">From $100</div>
-                <ul>
-                    <li>Premium Scratch-Free Hand Wash</li>
-                    <li>Clay Bar Treatment & Decontamination</li>
-                    <li>High-Gloss Machine Wax Protection</li>
-                    <li>Wheel, Barrel & Tire Deep Scrub</li>
-                    <li>Trim Restoration & Tire Dress</li>
-                </ul>
-                <a href="#contact" class="cta-btn" style="padding: 0.5rem 1.5rem; font-size: 0.95rem;">Select Package</a>
-            </div>
-
-            <div class="card">
-                <h3>Signature Complete Detail</h3>
-                <div class="price">From $220</div>
-                <ul>
-                    <li>Interior Deep Cleaning + Exterior Polish</li>
-                    <li>Paint Enhancement & Gloss Boost</li>
-                    <li>Leather/Trim Conditioning Treatment</li>
-                    <li>Engine Bay & Wheel Well Detailing</li>
-                    <li>Final Inspection & Spray Sealant</li>
-                </ul>
-                <a href="#contact" class="cta-btn" style="padding: 0.5rem 1.5rem; font-size: 0.95rem;">Select Package</a>
+        <div class="hero-content">
+            <h1>Showroom Quality<span>at Your Home</span></h1>
+            <p>Premium mobile car detailing with interior deep cleaning and exterior paint restoration. Professional service, convenient location.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="cta-btn">Schedule Your Detail</a>
+                <a href="#services" class="cta-btn cta-btn-secondary">View Packages</a>
             </div>
         </div>
     </section>
 
-    <section class="section" id="about">
-        <h2 class="section-title">Why Drivers Choose B&B</h2>
+    <section class="section" id="services">
+        <h2 class="section-title">Premium Packages</h2>
+        <p class="section-subtitle">Tailored detailing solutions for every vehicle and budget</p>
+        <div class="grid">
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-wind"></i>
+                </div>
+                <h3>Interior Deep Clean</h3>
+                <div class="price">$120<span class="price-small">/service</span></div>
+                <ul>
+                    <li>Full Cabin Vacuum & Blowout</li>
+                    <li>Hot Water Extractor Stain Removal</li>
+                    <li>Dashboard & Console Deep Clean</li>
+                    <li>Leather Conditioning & Protectant</li>
+                    <li>Streak-Free Window Clarity</li>
+                </ul>
+                <a href="#contact" class="cta-btn" style="padding: 0.7rem 1.5rem; font-size: 0.9rem;">Select Package</a>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-sparkles"></i>
+                </div>
+                <h3>Exterior Polish</h3>
+                <div class="price">$100<span class="price-small">/service</span></div>
+                <ul>
+                    <li>Premium Scratch-Free Hand Wash</li>
+                    <li>Clay Bar Treatment & Decontamination</li>
+                    <li>High-Gloss Machine Wax Protection</li>
+                    <li>Wheel & Tire Deep Scrub</li>
+                    <li>Trim Restoration & Tire Dress</li>
+                </ul>
+                <a href="#contact" class="cta-btn" style="padding: 0.7rem 1.5rem; font-size: 0.9rem;">Select Package</a>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-crown"></i>
+                </div>
+                <h3>Signature Complete</h3>
+                <div class="price">$220<span class="price-small">/service</span></div>
+                <ul>
+                    <li>Interior Deep Clean + Exterior Polish</li>
+                    <li>Paint Enhancement & Gloss Boost</li>
+                    <li>Leather/Trim Conditioning</li>
+                    <li>Engine Bay & Wheel Well Detail</li>
+                    <li>Final Inspection & Spray Sealant</li>
+                </ul>
+                <a href="#contact" class="cta-btn" style="padding: 0.7rem 1.5rem; font-size: 0.9rem;">Select Package</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="why-us">
+        <h2 class="section-title">Why Choose B&B</h2>
+        <p class="section-subtitle">Excellence in every detail, convenience in every visit</p>
         <div class="highlights">
             <div class="highlight">
                 <span class="number">100%</span>
-                <p>Mobile detailing service with convenience built in.</p>
+                <p>Mobile Service—no trips needed. We come to you.</p>
             </div>
             <div class="highlight">
                 <span class="number">5★</span>
-                <p>Premium service focused on quality, finish, and care.</p>
+                <p>Premium-grade products and professional techniques.</p>
             </div>
             <div class="highlight">
-                <span class="number">Same</span>
-                <p>Day availability for select bookings and appointments.</p>
+                <span class="number">Fast</span>
+                <p>Same-day booking available for your convenience.</p>
             </div>
             <div class="highlight">
-                <span class="number">1:1</span>
-                <p>Personal attention from start to finish on every vehicle.</p>
+                <span class="number">Expert</span>
+                <p>Years of experience perfecting the craft.</p>
             </div>
         </div>
     </section>
 
     <section class="section" id="contact">
         <h2 class="section-title">Book Your Detail</h2>
+        <p class="section-subtitle">Reserve your appointment today and experience the difference</p>
         <div class="contact-flex">
             <div class="contact-info">
-                <h3>Let’s make your car shine.</h3>
-                <p>Reserve your appointment for a premium mobile detailing service tailored to your vehicle’s needs.</p>
-                <span class="detail">📍 Serving homes, offices, and apartments across the local area</span>
-                <span class="detail">📞 (555) 123-4567</span>
-                <span class="detail">✉️ bookings@bnbprodetailing.com</span>
+                <h3>Ready to Shine?</h3>
+                <p>Let's transform your vehicle into a showroom masterpiece. B&B Pro Detailing brings premium service directly to your location with professional-grade products and expert craftsmanship.</p>
+
+                <div class="contact-detail">
+                    <i class="fas fa-phone"></i>
+                    <span>(555) 123-4567</span>
+                </div>
+
+                <div class="contact-detail">
+                    <i class="fas fa-envelope"></i>
+                    <span>bookings@bnbprodetailing.com</span>
+                </div>
+
+                <div class="contact-detail">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Serving the Local Area</span>
+                </div>
+
+                <div class="contact-detail">
+                    <i class="fas fa-clock"></i>
+                    <span>Available 7 Days a Week</span>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://www.facebook.com/share/1LFZ3XXR4A/?mibextid=wwXIfr" target="_blank" title="Visit our Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                </div>
             </div>
 
-            <form class="contact-form">
-                <div class="form-group">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" name="name" placeholder="Your name" required>
+            <form class="booking-form" id="bookingForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" placeholder="Your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" required>
+                    </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="vehicle">Vehicle Type</label>
-                    <select id="vehicle" name="vehicle">
-                        <option value="sedan">Sedan</option>
-                        <option value="suv">SUV</option>
-                        <option value="truck">Truck</option>
-                        <option value="luxury">Luxury / Performance</option>
-                    </select>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="your@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="vehicle">Vehicle Type *</label>
+                        <select id="vehicle" name="vehicle" required>
+                            <option value="">Select vehicle type...</option>
+                            <option value="sedan">Sedan</option>
+                            <option value="coupe">Coupe</option>
+                            <option value="suv">SUV</option>
+                            <option value="truck">Truck</option>
+                            <option value="van">Van/Minivan</option>
+                            <option value="luxury">Luxury / Performance</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="service">Service Needed</label>
-                    <select id="service" name="service">
-                        <option value="interior">Interior Deep Clean</option>
-                        <option value="exterior">Exterior Showroom Polish</option>
-                        <option value="signature">Signature Complete Detail</option>
-                    </select>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="service">Service Needed *</label>
+                        <select id="service" name="service" required>
+                            <option value="">Select a service...</option>
+                            <option value="interior">Interior Deep Clean - $120</option>
+                            <option value="exterior">Exterior Polish - $100</option>
+                            <option value="signature">Signature Complete - $220</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Preferred Date *</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" required>
+                <div class="form-row full">
+                    <div class="form-group">
+                        <label for="message">Vehicle Details & Special Requests</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Tell us about your vehicle condition, any stains, paint issues, or specific concerns..."></textarea>
+                    </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="message">Tell us about your vehicle</label>
-                    <textarea id="message" name="message" rows="4" placeholder="Let us know any specific concerns, paint issues, or interior needs."></textarea>
+                <button type="submit" class="submit-btn">Request Your Appointment</button>
+                <div class="form-success" id="formSuccess">
+                    <i class="fas fa-check-circle"></i> Thank you! We'll be in touch within 2 hours to confirm your booking.
                 </div>
-
-                <button type="submit" class="submit-btn">Request My Detail</button>
             </form>
         </div>
     </section>
 
     <footer>
-        &copy; 2026 B&B Pro Detailing | Premium Mobile Car Detailing Services
+        &copy; 2026 B&B Pro Detailing <span class="divider">|</span> Premium Mobile Car Detailing Services
     </footer>
+
+    <script>
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const formData = {
+                name: document.getElementById('name').value,
+                phone: document.getElementById('phone').value,
+                email: document.getElementById('email').value,
+                vehicle: document.getElementById('vehicle').value,
+                service: document.getElementById('service').value,
+                date: document.getElementById('date').value,
+                message: document.getElementById('message').value
+            };
+
+            console.log('Booking Request:', formData);
+
+            const successMsg = document.getElementById('formSuccess');
+            successMsg.classList.add('show');
+            this.reset();
+
+            setTimeout(() => {
+                successMsg.classList.remove('show');
+            }, 5000);
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        const dateInput = document.getElementById('date');
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.min = today;
+    </script>
 </body>
 </html>

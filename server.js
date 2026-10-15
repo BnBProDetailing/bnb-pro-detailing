@@ -59,10 +59,10 @@ app.post('/api/send-booking', async (req, res) => {
             <p>Best regards,<br>B&B Pro Detailing Team<br>(904) 497-7004</p>
         `;
 
-        // Send email to business
+        // Send email to business (use env var if set, otherwise default to the requested address)
         await transporter.sendMail({
             from: process.env.EMAIL_USER,
-            to: process.env.BUSINESS_EMAIL,
+            to: process.env.BUSINESS_EMAIL || 'bnbprodetailing1@gmail.com',
             subject: `New Booking Request from ${name}`,
             html: businessEmailContent
         });
@@ -93,7 +93,7 @@ function escapeHtml(text) {
         '"': '&quot;',
         "'": '&#039;'
     };
-    return text.replace(/[&<>"']/g, m => map[m]);
+    return (text || '').replace(/[&<>"']/g, m => map[m]);
 }
 
 const PORT = process.env.PORT || 3000;
